@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+      </head>
+  <body>
+      <div style='width:100%;padding:100px;display:flex;flex-direction:column;justify-content:center;'>
+      <p style='font-family: 'Roboto', sans-serif;'><strong>No Of Users</strong></p>
+      {%for i,j in c.items%}    
+      <div class="w3-grey" style='width:60%;margin-top:10px'>
+      <div class="w3-container w3-green" style="height:24px;width:{{j}}%;">
+      {{i}}:{{j}}
+      </div>
+      </div>
+      {%endfor%}
+       
+
+      <div>
+      <table border:1px solid black>
+      <tr>
+      <th>User Access Time</th>
+      </tr>
+      {%for i in dateTime%}  
+        <tr>
+          <td>{{i}}</td>
+          </tr>
+      {%endfor%} 
+      </table>
+    
+      </div>
+    
+
+   <p style='font-family: 'Roboto', sans-serif;'><strong>Operating Systems</strong></p>
+      {%for i,j in os.items%}    
+      <div class="w3-grey" style='width:60%;margin-top:10px'>
+      <div class="w3-container w3-red" style="height:24px;width:{{j}}%;">
+      {{i}}:{{j}}
+      </div>
+      </div>
+      {%endfor%}
+    
+    
+    
+    
+
+     <p style='font-family: 'Roboto', sans-serif;'><strong>Browsers Used By Users</strong></p>
+      {%for i,j in browser.items%}    
+      <div class="w3-grey" style='width:60%;margin-top:10px'>
+      <div class="w3-container w3-green" style="height:24px;width:{{j}}%;">
+      {{i}}:{{j}}
+      </div>
+      </div>
+      {%endfor%}
+    
+      </div>
+    
+
+      </div>
+   
+      
+  </body>
+</html>
